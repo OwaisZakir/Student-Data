@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal with Modern GSAP Animations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="left"></div>
+    <div class="right">
+      <h1>Student Information</h1>
+      <table id="table">
+        <tr>
+          <th>ID</th>
+          <th>Student Name</th>
+          <th>Father Name</th>
+          <th>Semester</th>
+          <th>Fees Status</th>
+          <th>Courses</th>
+        </tr>
+        <tr>
+          <td>1001</td>
+          <td>Hanzala</td>
+          <td>Ahmed</td>
+          <td>5th</td>
+          <td>Paid</td>
+          <td>Maths, Urdu, English</td>
+        </tr>
+        <tr>
+          <td>1002</td>
+          <td>Hammad</td>
+          <td>Ali</td>
+          <td>6th</td>
+          <td>un-Paid</td>
+          <td>Maths, Urdu, English</td>
+        </tr>
+        <tr>
+          <td>1003</td>
+          <td>Khalid</td>
+          <td>Khan</td>
+          <td>2nd</td>
+          <td>un-Paid</td>
+          <td>Physics, English</td>
+        </tr>
+      </table>
+      <div class="popup">
+        <button class="btn" id="openModalBtn">Add More Student</button>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1>Add New Student</h1>
+              <button class="btn-close" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="studentID">ID:</label>
+                <input
+                  required
+                  type="text"
+                  id="studentID"
+                  placeholder="Enter student's ID"
+                />
+              </div>
+              <div class="form-group">
+                <label for="studentName">Student Name:</label>
+                <input
+                  required
+                  type="text"
+                  id="studentName"
+                  placeholder="Enter student's name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="studentSemester">Student Semester:</label>
+                <input
+                  required
+                  type="number"
+                  id="studentSemester"
+                  placeholder="Enter student's Semester"
+                />
+              </div>
+              <div class="form-group">
+                <label for="studentFName">Father Name:</label>
+                <input
+                  required
+                  type="text"
+                  id="studentFName"
+                  placeholder="Enter student's Father Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="studentFee">Student Fees Status:</label>
+                <select name="select" id="studentFee">
+                  <option hidden>Enter student's Semester</option>
+                  <option value="paid">Paid</option>
+                  <option value="unPaid">UnPaid</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="studentCourses">Courses</label>
+                <input
+                  required
+                  type="text"
+                  id="studentCourses"
+                  placeholder="Enter Courses Comma Separated"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" id="closeModalBtnFooter">Close</button>
+              <button class="btn" id="saveChangesBtn">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+    <script>
+      // Get modal and buttons
+      const modal = document.getElementById("myModal");
+      const modalContent = document.querySelector(".modal-content");
+      const openModalBtn = document.getElementById("openModalBtn");
+      const closeModalBtns = document.querySelectorAll(
+        "#closeModalBtn, #closeModalBtnFooter"
+      );
+      const saveChangesBtn = document.getElementById("saveChangesBtn");
+
+      // Function to open the modal with modern animation (Scaling, Rotation, Fade-in)
+      openModalBtn.onclick = function () {
+        modal.style.display = "flex"; // Show modal
+        gsap.fromTo(
+          modalContent,
+          { scale: 0.8, rotation: -15, opacity: 0 }, // Start smaller, rotated and invisible
+          {
+            scale: 1,
+            rotation: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "back.out(1)", // Smoothly scale and fade in
+          }
+        );
+      };
+
+      // Close the modal with modern fade-out animation (Scaling, Rotation)
+      closeModalBtns.forEach((btn) => {
+        btn.onclick = function () {
+          gsap.to(modalContent, {
+            scale: 0.8, // Scale down to make it disappear
+            rotation: 15, // Rotate slightly
+            opacity: 0, // Fade out
+            duration: 0.6, // Smooth transition duration
+            ease: "power2.in", // Easing to make the closing feel smoother
+            onComplete: () => {
+              modal.style.display = "none"; // Hide modal after animation
+            },
+          });
+        };
+      });
+
+      // Close modal if clicked outside
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          gsap.to(modalContent, {
+            scale: 0.8, // Scale down to make it disappear
+            rotation: 15, // Rotate slightly
+            opacity: 0, // Fade out
+            duration: 0.6, // Smooth transition duration
+            ease: "power2.in", // Easing to make the closing feel smoother
+            onComplete: () => {
+              modal.style.display = "none"; // Hide modal after animation
+            },
+          });
+        }
+      };
+
+      // Close the modal when the "Save changes" button is clicked
+      saveChangesBtn.onclick = function () {
+        gsap.to(modalContent, {
+          scale: 0.8, // Scale down to make it disappear
+          rotation: 15, // Rotate slightly
+          opacity: 0, // Fade out
+          duration: 0.6, // Smooth transition duration
+          ease: "power2.in", // Easing to make the closing feel smoother
+          onComplete: () => {
+            modal.style.display = "none"; // Hide modal after animation
+          },
+        });
+      };
+    </script>
+  </body>
+</html>
