@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modal with Modern GSAP Animations</title>
+    <title>Student Data|Owais Zakir</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="left"></div>
-    <div class="right">
+    <div class="main">
       <h1>Student Information</h1>
       <table id="table">
         <tr>
@@ -53,60 +52,94 @@
               <button class="btn-close" id="closeModalBtn">&times;</button>
             </div>
             <div class="modal-body">
-              <div class="form-group">
-                <label for="studentID">ID:</label>
-                <input
-                  required
-                  type="text"
-                  id="studentID"
-                  placeholder="Enter student's ID"
-                />
+              <div class="form-control">
+                <input id="studentID" required="" type="value" />
+                <label>
+                  <span style="transition-delay: 350ms">I</span>
+                  <span style="transition-delay: 300ms">D</span>
+                  <span style="transition-delay: 250ms">:</span>
+                </label>
               </div>
-              <div class="form-group">
-                <label for="studentName">Student Name:</label>
-                <input
-                  required
-                  type="text"
-                  id="studentName"
-                  placeholder="Enter student's name"
-                />
+              <div class="form-control">
+                <input id="studentName" required="" type="value" />
+                <label>
+                  <span style="transition-delay: 350ms">S</span>
+                  <span style="transition-delay: 320ms">t</span>
+                  <span style="transition-delay: 300ms">u</span>
+                  <span style="transition-delay: 280ms">d</span>
+                  <span style="transition-delay: 260ms">e</span>
+                  <span style="transition-delay: 220ms">n</span>
+                  <span style="transition-delay: 210ms">t</span>
+                  <span style="transition-delay: 180ms"> </span>
+                  <span style="transition-delay: 160ms">N</span>
+                  <span style="transition-delay: 130ms">a</span>
+                  <span style="transition-delay: 120ms">m</span>
+                  <span style="transition-delay: 100ms">e</span>
+                  <span style="transition-delay: 50ms">:</span>
+                </label>
               </div>
-              <div class="form-group">
-                <label for="studentSemester">Student Semester:</label>
-                <input
-                  required
-                  type="number"
-                  id="studentSemester"
-                  placeholder="Enter student's Semester"
-                />
+              <div class="form-control">
+                <input id="studentFName" required="" type="value" />
+                <label>
+                  <span style="transition-delay: 350ms">F</span>
+                  <span style="transition-delay: 320ms">a</span>
+                  <span style="transition-delay: 300ms">t</span>
+                  <span style="transition-delay: 280ms">h</span>
+                  <span style="transition-delay: 260ms">e</span>
+                  <span style="transition-delay: 220ms">r</span>
+                  <span style="transition-delay: 180ms"> </span>
+                  <span style="transition-delay: 160ms">N</span>
+                  <span style="transition-delay: 130ms">a</span>
+                  <span style="transition-delay: 120ms">m</span>
+                  <span style="transition-delay: 100ms">e</span>
+                  <span style="transition-delay: 50ms">:</span>
+                </label>
               </div>
-              <div class="form-group">
-                <label for="studentFName">Father Name:</label>
-                <input
-                  required
-                  type="text"
-                  id="studentFName"
-                  placeholder="Enter student's Father Name"
-                />
+              <div class="form-control">
+                <input id="studentSemester" required="" type="value" />
+                <label>
+                  <span style="transition-delay: 350ms">S</span>
+                  <span style="transition-delay: 320ms">t</span>
+                  <span style="transition-delay: 300ms">u</span>
+                  <span style="transition-delay: 280ms">d</span>
+                  <span style="transition-delay: 260ms">e</span>
+                  <span style="transition-delay: 220ms">n</span>
+                  <span style="transition-delay: 210ms">t</span>
+                  <span style="transition-delay: 180ms"> </span>
+                  <span style="transition-delay: 160ms">S</span>
+                  <span style="transition-delay: 130ms">e</span>
+                  <span style="transition-delay: 120ms">m</span>
+                  <span style="transition-delay: 90ms">e</span>
+                  <span style="transition-delay: 70ms">s</span>
+                  <span style="transition-delay: 50ms">t</span>
+                  <span style="transition-delay: 40ms">e</span>
+                  <span style="transition-delay: 30ms">e</span>
+                  <span style="transition-delay: 20ms">r</span>
+                  <span style="transition-delay: 0ms">:</span>
+                </label>
+              </div>
+              <div class="form-control">
+                <input id="studentCourses" required="" type="value" />
+                <label>
+                  <span style="transition-delay: 350ms">C</span>
+                  <span style="transition-delay: 300ms">o</span>
+                  <span style="transition-delay: 250ms">u</span>
+                  <span style="transition-delay: 200ms">r</span>
+                  <span style="transition-delay: 150ms">s</span>
+                  <span style="transition-delay: 100ms">e</span>
+                  <span style="transition-delay: 50ms">s</span>
+                  <span style="transition-delay: 0ms">:</span>
+                </label>
               </div>
               <div class="form-group">
                 <label for="studentFee">Student Fees Status:</label>
                 <select name="select" id="studentFee">
                   <option hidden>Enter student's Semester</option>
-                  <option value="paid">Paid</option>
-                  <option value="unPaid">UnPaid</option>
+                  <option value="true">Paid</option>
+                  <option value="false">UnPaid</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label for="studentCourses">Courses</label>
-                <input
-                  required
-                  type="text"
-                  id="studentCourses"
-                  placeholder="Enter Courses Comma Separated"
-                />
-              </div>
-            </div>
+              
             <div class="modal-footer">
               <button class="btn" id="closeModalBtnFooter">Close</button>
               <button class="btn" id="saveChangesBtn">Save changes</button>
@@ -132,12 +165,12 @@
         modal.style.display = "flex"; // Show modal
         gsap.fromTo(
           modalContent,
-          { scale: 0.8, rotation: -15, opacity: 0 }, // Start smaller, rotated and invisible
+          { scale: 0.8, rotation: -8, opacity: 0 }, // Start smaller, rotated and invisible
           {
             scale: 1,
             rotation: 0,
             opacity: 1,
-            duration: 0.8,
+            duration: 0.3,
             ease: "back.out(1)", // Smoothly scale and fade in
           }
         );
@@ -148,9 +181,9 @@
         btn.onclick = function () {
           gsap.to(modalContent, {
             scale: 0.8, // Scale down to make it disappear
-            rotation: 15, // Rotate slightly
+            rotation: 47, // Rotate slightly
             opacity: 0, // Fade out
-            duration: 0.6, // Smooth transition duration
+            duration: 0.3, // Smooth transition duration
             ease: "power2.in", // Easing to make the closing feel smoother
             onComplete: () => {
               modal.style.display = "none"; // Hide modal after animation
@@ -164,9 +197,9 @@
         if (event.target == modal) {
           gsap.to(modalContent, {
             scale: 0.8, // Scale down to make it disappear
-            rotation: 15, // Rotate slightly
+            rotation: 35, // Rotate slightly
             opacity: 0, // Fade out
-            duration: 0.6, // Smooth transition duration
+            duration: 0.2, // Smooth transition duration
             ease: "power2.in", // Easing to make the closing feel smoother
             onComplete: () => {
               modal.style.display = "none"; // Hide modal after animation
@@ -179,9 +212,9 @@
       saveChangesBtn.onclick = function () {
         gsap.to(modalContent, {
           scale: 0.8, // Scale down to make it disappear
-          rotation: 15, // Rotate slightly
+          rotation: 32, // Rotate slightly
           opacity: 0, // Fade out
-          duration: 0.6, // Smooth transition duration
+          duration: 0.3, // Smooth transition duration
           ease: "power2.in", // Easing to make the closing feel smoother
           onComplete: () => {
             modal.style.display = "none"; // Hide modal after animation

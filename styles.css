@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 html,
@@ -14,27 +15,82 @@ body {
   height: 100vh;
 }
 
+
+
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 250px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #fff;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+  color: lightblue;
+  transform: translateY(-30px);
+}
+
+
 /* Add more styles below */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background: linear-gradient(to right, #10B981, #064E3B);
+
+  color: white ;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5rem;
 }
-
-
-.left {
-  width: 35%;
+.main
+{
+  padding: 2rem;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
-.right {
-  width: 65%;
-}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  
 }
 
 td,
@@ -71,11 +127,11 @@ th {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: rgba(10, 9, 9, 0.767);
   padding: 20px;
   border-radius: 8px;
-  width: 400px;
-  position: relative;
+  height: 80%;
+  width: 70%;
 }
 
 .modal-header {
@@ -88,6 +144,12 @@ th {
 
 .modal-body {
   margin-top: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 5rem;
 }
 
 .modal-footer {
